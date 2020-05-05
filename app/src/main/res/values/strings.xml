@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CHATBOX-19</string>
+    <string name="app_name">COVID</string>
     <string name="covid_19_faq">Covid-19 FAQ</string>
     <string name="create_new_account">Create New Account</string>
     <string name="full_name">Full Name</string>
@@ -14,4 +14,7 @@
     <string name="new_user_create_account">New User? Create Account</string>
     <string name="welcome_to_the_dashboard">Welcome To the Dashboard</string>
     <string name="log_out">Log Out</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="email_not_verified">Email Not Verified</string>
+    <string name="verify">Verify</string>
 </resources>
