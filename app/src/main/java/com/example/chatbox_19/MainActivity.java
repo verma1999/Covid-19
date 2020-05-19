@@ -57,4 +57,8 @@ public class MainActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),login.class));
     }
+
+    public  void statistics(View view){
+        startActivity(new Intent(getApplicationContext(), Main2Activity.class));
+    }
 }
