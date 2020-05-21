@@ -18,4 +18,6 @@
     <string name="email_not_verified">Email Not Verified</string>
     <string name="verify">Verify</string>
     <string name="covidstats">COVIdSTATS</string>
+    <string name="welcome">Welcome</string>
+    <string name="related_articles">Related Articles</string>
 </resources>
