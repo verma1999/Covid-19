@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewIte
     private static final String API_KEY = "983eeee38b1a4b1b8ab93aea592d3917";
 
     TextView msg;
+    ImageView chatEmoji;
+    Button btnChat;
     Button verifylk;
     FirebaseAuth mAuth;
     SimpleArcLoader simpleArcLoader;
@@ -53,10 +56,13 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
 
         msg = findViewById(R.id.verify);
         verifylk = findViewById(R.id.verifyLink);
         mAuth = FirebaseAuth.getInstance();
+        chatEmoji = findViewById(R.id.Chat);
+        btnChat = findViewById(R.id.btnChat);
 
         mainRecycler = findViewById(R.id.activity_main_rv);
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -70,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewIte
         if (!user.isEmailVerified()) {
             msg.setVisibility(View.VISIBLE);
             verifylk.setVisibility(View.VISIBLE);
+            chatEmoji.setVisibility(View.INVISIBLE);
+            btnChat.setVisibility(View.INVISIBLE);
             verifylk.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View v) {
@@ -89,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewIte
         }
 
         final APIInterface apiService = ApiClient.getClient().create(APIInterface.class);
-        Call<ResponseModel> call = apiService.getLatestNews("techcrunch", API_KEY);
+        Call<ResponseModel> call = apiService.getLatestNews("Covid-19", "en" , "in", "popularity", API_KEY);
         call.enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel>call, Response<ResponseModel> response) {
@@ -132,6 +140,10 @@ public class MainActivity extends AppCompatActivity implements OnRecyclerViewIte
 
     public void statistics(View view) {
         startActivity(new Intent(getApplicationContext(), Main2Activity.class));
+    }
+
+    public void ChatAssistance(View view) {
+        startActivity(new Intent(getApplicationContext(), Chat.class));
     }
 
 }

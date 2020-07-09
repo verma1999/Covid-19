@@ -3,6 +3,7 @@
     package="com.example.chatbox_19">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AffectedCountries"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".Chat" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".login" />
         <activity android:name=".register">
@@ -21,8 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-
-        <activity android:name=".WebActivity"></activity>
+        <activity android:name=".WebActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

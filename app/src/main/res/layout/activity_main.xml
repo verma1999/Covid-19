@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@drawable/zcovid"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/textborder"
+        android:fontFamily="@font/aclonica"
         android:gravity="center_horizontal"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="@string/related_articles"
         android:textAlignment="center"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="#FFED00"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/newsView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="1.0"></TextView>
@@ -30,9 +43,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/textborder"
         android:fontFamily="@font/aclonica"
+        android:padding="5dp"
         android:text="@string/welcome"
-        android:textColor="#081D97"
+        android:textColor="#FFF355"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,13 +60,16 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/newsView"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="386dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.985"
-        tools:layout_editor_absoluteX="-3dp">
+        app:layout_constraintVertical_bias="0.985">
 
         <ScrollView
             android:id="@+id/scrollNews"
@@ -93,7 +111,7 @@
         android:id="@+id/btnLogOut"
         android:layout_width="79dp"
         android:layout_height="35dp"
-        android:background="#ECDD8D"
+        android:background="@drawable/roundedbuttons"
         android:onClick="logout"
         android:text="@string/log_out"
         android:textSize="12sp"
@@ -137,15 +155,42 @@
         android:id="@+id/btnData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#397FB6"
+        android:background="@drawable/roundedbuttons"
         android:onClick="statistics"
         android:text="@string/covidstats"
         android:textColorHighlight="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/Chat"
+        android:layout_width="95dp"
+        android:layout_height="67dp"
+        android:onClick="ChatAssistance"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogOut"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018"
+        app:srcCompat="@drawable/emoji" />
+
+    <Button
+        android:id="@+id/btnChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbuttons"
+        android:onClick="ChatAssistance"
+        android:text="Feedbacks"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Chat"
+        app:layout_constraintVertical_bias="0.081" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

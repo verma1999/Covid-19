@@ -19,7 +19,7 @@
         android:paddingTop="3sp"
         android:paddingRight="10sp"
         android:paddingBottom="3sp"
-        android:text="@string/covid_19_faq"
+        android:text="Covid Updates"
         android:textColor="#E60F0F"
         android:textSize="42sp"
         android:textStyle="bold"
