@@ -9,4 +9,6 @@
  I also want to thanks ARSL Tech youtube channel for teaching me some good pieces of stuff which I used in my #project.
  Lots more on the way #bePositive. 
  
+ Download the APP from the link :- www.getjar.mobi/mobile/980181/Covid-Updates
+ 
  And feel free to contribute to my project
